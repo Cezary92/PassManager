@@ -1,5 +1,8 @@
 package View;
 
+import Controller.PasswordManagerController;
+import Model.PasswordManagerModel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -54,7 +57,6 @@ public class SecurityView implements ActionListener {
         userPasswordLabel = new JLabel("Password: ");
         messageLabel = new JLabel();
 
-
         userLabel.setBounds(50, 100, 200,25);
         userPasswordLabel.setBounds(50, 150, 200,25);
         myButton.setBounds(125, 200, 100,25);
@@ -105,7 +107,9 @@ public class SecurityView implements ActionListener {
                     messageLabel.setForeground(Color.green);
                     messageLabel.setText("You logged in");
                     frame.dispose();
-                    MainView mainView = new MainView();
+                    PasswordManagerModel model = new PasswordManagerModel("pass.txt");
+                    PasswordManagerController controller = new PasswordManagerController(model, new MainView(model));
+
                 } else {
                     messageLabel.setForeground(Color.red);
                     messageLabel.setText("Wrong password!");

@@ -1,32 +1,31 @@
 package Controller;
 
+import Model.PasswordManagerModel;
+import View.MainView;
+
+import javax.swing.*;
+
 public class PasswordManagerController {
-/**
+
     private PasswordManagerModel model;
-    private PasswordManagerView view;
+    private MainView mainView;
 
-    public PasswordManagerController(PasswordManagerModel model, PasswordManagerView view) {
+    public PasswordManagerController(PasswordManagerModel model, MainView view) {
         this.model = model;
-        this.view = view;
-        this.view.setController(this);
+        this.mainView = view;
+        this.mainView.setController(this);
     }
 
-    public void addPassword(String password) {
-        model.addPassword(password);
-        view.updatePasswordList();
+    public void addPassword(String username, String password) {
+        model.addPassword(username, password);
+        mainView.updatePasswordList();
     }
 
-    public void removePassword(int index) {
-        model.removePassword(index);
-        view.updatePasswordList();
+    public void removePassword(String username) {
+        model.removePassword(username);
+        mainView.updatePasswordList();
     }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            PasswordManagerModel model = new PasswordManagerModel("passwords.txt");
-            PasswordManagerView view = new PasswordManagerView(model);
-            PasswordManagerController controller = new PasswordManagerController(model, view);
-        });
+    public void setMainView(MainView mainView) {
+        this.mainView = mainView;
     }
-    */
 }
