@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.SecureRandom;
 import java.util.Map;
 
 public class MainView {
@@ -19,6 +20,10 @@ public class MainView {
     private  JTextField userTextField;
     private JLabel userLabel;
     private JLabel passLabel;
+    private JButton addButton;
+    private JButton removeButton;
+    private JButton generateButton;
+    private JScrollPane scrollPane;
 
     public MainView(PasswordManagerModel model) {
         this.model = model;
@@ -42,13 +47,39 @@ public class MainView {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         passwordListTextArea = new JTextArea();
-        JScrollPane scrollPane = new JScrollPane(passwordListTextArea);
+        scrollPane = new JScrollPane(passwordListTextArea);
         newPasswordTextField = new JTextField();
         userTextField = new JTextField();
-        JButton addButton = new JButton("Add Password");
-        JButton removeButton = new JButton("Remove Selected");
+        generateButton = new JButton("Generate password");
+        addButton = new JButton("Add password");
+        removeButton = new JButton("Remove selected");
         userLabel = new JLabel("enter the user to add: ");
         passLabel = new JLabel("enter the password to add: ");
+
+        generateButton.setBounds(320, 450,200,25);
+        scrollPane.setBounds(50, 50, 300, 200);
+        userLabel.setBounds(50,275,200,25);
+        userTextField.setBounds(50, 300, 200, 25);
+        passLabel.setBounds(50,325,200,25);
+        newPasswordTextField.setBounds(50, 350, 200, 25);
+        addButton.setBounds(50, 400, 200, 25);
+        removeButton.setBounds(50, 450, 200, 25);
+
+        frame.setLayout(null);
+        frame.add(scrollPane);
+        frame.add(newPasswordTextField);
+        frame.add(userTextField);
+        frame.add(addButton);
+        frame.add(removeButton);
+        frame.add(userLabel);
+        frame.add(passLabel);
+        frame.add(generateButton);
+
+
+
+        updatePasswordList();
+
+        frame.setVisible(true);
 
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -83,30 +114,26 @@ public class MainView {
                 }
             }
         });
+        generateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                StringBuilder password = new StringBuilder();
+                SecureRandom random = new SecureRandom();
+                String ALLOWED_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+                for (int i = 0; i < 12; i++) {
+                    int randomIndex = random.nextInt(ALLOWED_CHARACTERS.length());
+                    char randomChar = ALLOWED_CHARACTERS.charAt(randomIndex);
+                    password.append(randomChar);
+                }
+
+                newPasswordTextField.setText(password.toString());
+
+            }
+        });
 
 
-        scrollPane.setBounds(50, 50, 300, 200);
-        userLabel.setBounds(50,275,200,25);
-        userTextField.setBounds(50, 300, 200, 25);
-        passLabel.setBounds(50,325,200,25);
-        newPasswordTextField.setBounds(50, 350, 200, 25);
-        addButton.setBounds(50, 400, 200, 25);
-        removeButton.setBounds(50, 450, 200, 25);
 
-        frame.setLayout(null);
-        frame.add(scrollPane);
-        frame.add(newPasswordTextField);
-        frame.add(userTextField);
-        frame.add(addButton);
-        frame.add(removeButton);
-        frame.add(userLabel);
-        frame.add(passLabel);
-
-
-
-        updatePasswordList();
-
-        frame.setVisible(true);
     }
 
     public void updatePasswordList() {
