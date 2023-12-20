@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85ea3c30-fae0-4378-9ed6-8edfdff736fb" name="Changes" comment="chane M/V/C">
+    <list default="true" id="85ea3c30-fae0-4378-9ed6-8edfdff736fb" name="Changes" comment="Add genarate password">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/SecurityView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/SecurityView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +74,8 @@
       <workItem from="1701810377451" duration="749000" />
       <workItem from="1702220312093" duration="1236000" />
       <workItem from="1702232862661" duration="8379000" />
-      <workItem from="1703018259595" duration="1857000" />
+      <workItem from="1703018259595" duration="2228000" />
+      <workItem from="1703098200227" duration="3433000" />
     </task>
     <task id="LOCAL-00001" summary="add simple view">
       <created>1701720593540</created>
@@ -109,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702240646148</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add genarate password">
+      <created>1703021008125</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703021008125</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +141,7 @@
     <MESSAGE value="add model" />
     <MESSAGE value="add PasswordManagerController" />
     <MESSAGE value="chane M/V/C" />
-    <option name="LAST_COMMIT_MESSAGE" value="chane M/V/C" />
+    <MESSAGE value="Add genarate password" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add genarate password" />
   </component>
 </project>

@@ -8,6 +8,5 @@ public class Main {
         SwingUtilities.invokeLater(() -> new SecurityView());
 
 
-        System.out.println("hello");
     }
 }

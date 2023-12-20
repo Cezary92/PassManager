@@ -8,9 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
-/**
- * First desktop frame for a secured application.
- */
+
+ //First desktop frame for a secured application.
+
 public class SecurityView implements ActionListener {
 
     private JFrame frame;
@@ -31,9 +31,9 @@ public class SecurityView implements ActionListener {
         addEventListeners();
         setupDefaultCredentials();
     }
-    /**
-     * Initializes the user interface.
-     */
+
+     //Initializes the user interface.
+
     private void initializeUI(){
         frame = new JFrame();
         frame.setSize(420, 420);
@@ -45,9 +45,9 @@ public class SecurityView implements ActionListener {
         frame.setIconImage(image.getImage());
         frame.setLayout(null);
     }
-    /**
-     * Creates and adds components to the user interface.
-     */
+
+     // Creates and adds components to the user interface.
+
     private void createAndAddComponents(){
         myButton = new JButton("Sign in");
         resetButton = new JButton("Reset");
@@ -73,17 +73,17 @@ public class SecurityView implements ActionListener {
         frame.add(userTextField);
         frame.add(passwordField);
         frame.add(messageLabel);
+        frame.getContentPane().setBackground(Color.LIGHT_GRAY);
+
     }
-    /**
-     * Adds event listeners to buttons.
-     */
+
+     //Adds event listeners to buttons.
+
     private void addEventListeners() {
         resetButton.addActionListener(this);
         myButton.addActionListener(this);
     }
-    /**
-     * Sets up default access credentials.
-     */
+
     private void setupDefaultCredentials(){
         firstPass = new HashMap<String, String>();
         firstPass.put("admin", "admin");
